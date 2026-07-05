@@ -5,7 +5,7 @@ const { authenticateToken } = require('../middleware/auth');
 
 const router = express.Router();
 
-const DATA_DIR = path.join(__dirname, '..', '..', 'frontend', 'public', 'data');
+const DATA_DIR = path.join(__dirname, '..', 'data');
 const ARTWORKS_FILE = path.join(DATA_DIR, 'artworks.json');
 
 function readArtworks() {
