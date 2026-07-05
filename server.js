@@ -11,6 +11,7 @@ const artworkRoutes = require('./routes/artworks');
 const commentRoutes = require('./routes/comments');
 const artistRoutes = require('./routes/artists');
 const adminRoutes = require('./routes/admin');
+const passport = require('./config/passport');
 const { connectToDatabase } = require('./config/db');
 
 const app = express();
@@ -38,6 +39,7 @@ app.use(cors({
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(passport.initialize());
 
 // Test Route
 app.get('/api', (req, res) => {
